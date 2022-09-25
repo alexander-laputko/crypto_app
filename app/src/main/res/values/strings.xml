@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Crypto app</string>
+    <string name="title_activity_coins_list">CoinsListActivity</string>
 </resources>
