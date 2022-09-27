@@ -23,6 +23,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.ViewModel
+import coil.compose.AsyncImage
 import coil.compose.rememberAsyncImagePainter
 import coil.compose.rememberImagePainter
 import coil.transform.CircleCropTransformation
@@ -56,12 +57,8 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Coin(coin: CoinItem) {
     Row(Modifier.fillMaxWidth()) {
-        Image(
-            painter = rememberImagePainter(data = coin.image,
-                builder = {
-                placeholder(coil.base.R.drawable.notification_action_background)
-                transformations(CircleCropTransformation())
-            }),
+        AsyncImage(
+            model = coin.image,
             contentDescription = null,
             modifier = Modifier.weight(1f)
         )
